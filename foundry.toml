@@ -1,0 +1,17 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc_version = "0.8.24"
+optimizer = true
+optimizer_runs = 200
+
+# Arc mainnet (Circle L1, EVM-compatible, USDC = native gas)
+# NOTE: Arc RPC is currently unreachable from this build environment
+# (all 7 known endpoints hang). Set ARC_RPC_URL when deploying from
+# a network with access.
+[rpc_endpoints]
+arc = "${ARC_RPC_URL}"
+
+[etherscan]
+arc = { key = "${ARCSCAN_API_KEY}", url = "https://explorer.arc.io/api" }
